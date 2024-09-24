@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skrining Perkembangan - 18 Bulan</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/icons/icon-LM.png" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#F9FBFD] overflow-x-hidden">
+    <!-- Open Tag Header -->
+    <header class="fixed-navbar w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-3 md:px-6 lg:px-12 flex justify-between items-center py-3"
+      >
+        <div class="shrink-0">
+          <img
+            src="../assets/images/logo.png"
+            alt="Baby Care Logo"
+            class="w-40 md:w-44 lg:w-48"
+          />
+        </div>
+
+        <!-- Desktop Navbar -->
+        <nav class="hidden lg:block navbar navbar-expand-lg navbar-light">
+          <ul class="flex items-center gap-x-12">
+            <li>
+              <a href="../dashboard.html" class="text-white custom-hover"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <div class="nav-item dropdown">
+                <a
+                  href=""
+                  class="nav-link dropdown-toggle text-white custom-hover"
+                  data-toggle="dropdown"
+                  >Fitur</a
+                >
+                <div class="dropdown-menu">
+                  <a href="../perkembangan.html" class="dropdown-item"
+                    >Skrining Perkembangan</a
+                  >
+                  <a href="../pertumbuhan.html" class="dropdown-item"
+                    >Grafik Pertumbuhan</a
+                  >
+                  <a href="../imunisasi.html" class="dropdown-item"
+                    >Imunisasi</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="../catatan-perkembangan.html"
+                class="text-white custom-hover"
+                >Catatan Perkembangan</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="hidden lg:block">
+          <div class="flex items-center gap-x-3">
+            <a href="../profil.html">
+              <h1
+                id="user_full_name"
+                class="font-semibold text-white text-[16px]"
+              >
+                Jaezlyn
+              </h1>
+            </a>
+            <a href="../profil.html">
+              <div class="ml-2">
+                <img
+                  src="../assets/images/mommy.webp"
+                  alt="User's Profile Picture"
+                  class="w-[45px] h-[45px] rounded-full object-cover"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div class="block lg:hidden" id="open_modal_btn">
+          <svg
+            class="fill-white text-[26px] cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </div>
+
+        <!-- Mobile Modal -->
+        <div
+          class="mobile_modal translate-y-[100%] fixed top-0 left-0 w-full h-screen bg-[#272C49] px-4 flex justify-center items-center duration-500 ease-in-out z-[999]"
+        >
+          <div class="w-full">
+            <nav>
+              <ul class="flex flex-col justify-center items-center gap-y-6">
+                <li>
+                  <a
+                    href="../dashboard.html"
+                    class="text-xl text-white hover:text-[#FFCB40] duration-300 ease-in-out"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="relative">
+                  <a
+                    href="#features"
+                    class="text-xl text-white hover:text-[#FFCB40] duration-300 ease-in-out"
+                    >Fitur</a
+                  >
+                  <ul class="absolute hidden dropdown">
+                    <li><a href="#" class="dropdown-item">Pertumbuhan</a></li>
+                    <li><a href="#" class="dropdown-item">Perkembangan</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="articles.html"
+                    class="text-xl text-white hover:text-[#FFCB40] duration-300 ease-in-out"
+                    >Cek Kesehatan</a
+                  >
+                </li>
+                <span class="w-[120px] border-t-2 border-[#FFCB40]"></span>
+                <li>
+                  <a
+                    href="signup.html"
+                    class="signup_link text-xl text-white hover:text-[#FFCB40] duration-300 ease-in-out"
+                    >Get Started</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="dashboard/index.html"
+                    class="dashboard_link text-xl text-white hover:text-[#FFCB40] duration-300 ease-in-out"
+                    >Dashboard</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="absolute top-6 right-6" id="close_modal_btn">
+            <svg
+              class="fill-white text-[26px] cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Close Tag Header -->
+
+    <!-- Open Tag Content -->
+    <div class="pt-[88px] pb-12">
+      <div
+        class="flex flex-col xl:flex-row justify-between w-full h-auto px-[60px] select-none" 
+      >
+        <!-- begin::Skrining Perkembangan -->
+        <div class="flex flex-col w-full h-auto py-2 xl:h-screen gap-y-4">
+          <div class="w-full justify-center text-center mb-2 mt-8">
+            <h1
+              class="font-opensans text-[18px] min-[840px]:text-[20px] text-[#0F3F25] font-extrabold mb-1"
+            >
+              Skrining Perkembangan Anak Usia 18 Bulan
+            </h1>
+          </div>
+
+          <!-- Begin::List Pertanyaan -->
+          <div
+            class="bg-white px-12 pt-10 pb-3 rounded-xl shadow-lg w-full gap-y-4" id="questionnaire"
+          >
+            <!-- Pertanyaan 1 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  1
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Saat anak dipangku, beri pensil dan kertas. Apakah anak bisa mencoret-coret kertas tanpa bantuan?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan1"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan1"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 2 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  2
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Apakah anak bisa menyebutkan minimal 3 kata yang bermakna?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan2"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan2"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 3 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  3
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Apakah anak bisa menunjukkan keinginannya tanpa menangis?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan3"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan3"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 4 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  4
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Apakah anak bisa minum dari cangkir atau gelas sendiri tanpa banyak tumpah?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan4"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan4"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 5 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  5
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Apakah anak suka meniru ibu atau pengasuh saat melakukan pekerjaan rumah (seperti merapikan mainan atau menyapu)?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan5"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan5"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 6 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  6
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Gelindingkan bola tenis ke anak. Apakah anak bisa menggelindingkan atau melempar bola kembali ke Anda?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan6"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan6"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 7 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  7
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Letakkan kubus di lantai. Apakah anak bisa membungkuk untuk mengambil kubus tanpa berpegangan, lalu berdiri lagi?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan7"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan7"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 8 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  8
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Minta anak berjalan di sepanjang ruangan. Apakah anak bisa berjalan tanpa terjatuh atau terhuyung?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan8"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan8"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 9 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  9
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Apakah anak bisa berjalan mundur minimal 5 langkah tanpa kehilangan keseimbangan?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan9"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan9"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pertanyaan 10 -->
+            <div class="items-center pb-4">
+              <div class="flex flex-row">
+                <div
+                  class="w-8 h-8 min-w-[2rem] min-h-[2rem] bg-[#0F3F25] text-white font-bold flex items-center justify-center rounded-full flex-shrink-0"
+                >
+                  10
+                </div>
+                <h2 class="text-base ml-3 md:text-lg">
+                  Beri anak perintah seperti “Ambil kertas,” “Ambil pensil,” atau “Tutup pintu” dengan isyarat. Apakah anak bisa mengikuti perintah tersebut dengan bantuan isyarat?
+                </h2>
+              </div>
+              <div class="flex space-x-4 mt-2 ml-[50px]">
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan10"
+                    value="tidak"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:border-none peer-checked:text-white"
+                  >
+                    Tidak
+                  </div>
+                </label>
+                <label class="w-1/2">
+                  <input
+                    type="radio"
+                    name="pertanyaan10"
+                    value="ya"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="py-2 text-center rounded-2xl border-[1px] border-gray-400 cursor-pointer peer-checked:bg-[#0F3F25] peer-checked:text-white"
+                  >
+                    Ya
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="border-b-2 border-[#FFC10E] pt-3"></div>
+            <!-- begin::Button Lihat Hasil -->
+            <div class="flex justify-end py-3">
+              <div
+                class="flex flex-col gap-y-3 w-full md:max-w-[325px] mt-1 place-items-end"
+              >
+                <button
+                  onclick="showResult()"
+                  class="flex flex-col w-full justify-center items-center text-center gap-x-2 bg-[#FFC10E] p-2.5 rounded-lg outline:none"
+                >
+                  <span
+                    class="text-[#B05F00] font-semibold text-[17px] lg:text-[15px]"
+                    >Lihat Hasil</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- end::Button Lihat Hasil -->
+          </div>
+          <!-- end::List Pertanyaan -->
+
+          <!-- Begin::Hasil -->
+          <div
+            class="bg-white px-12 py-8 mt-6 rounded-xl shadow-lg w-full "
+          >
+            <div id="result"></div>
+          </div>
+          <!-- end::Hasil -->
+        </div>
+        <!-- end::Skrining Perkembangan -->
+
+        
+      </div>
+    </div>
+    <!-- Close Tag Content -->
+
+    <!-- Open Tag Footer -->
+    <footer class="w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex flex-col justify-between items-center py-4 lg:py-8 gap-y-8"
+      >
+        <div class="w-full flex flex-col gap-y-5">
+          <div class="order-1">
+            <img
+              src="../assets/images/logo.png"
+              alt="Langkah Maju Logo"
+              class="w-40 md:w-44 lg:w-48"
+            />
+          </div>
+          <div class="order-2 flex flex-col ml-1">
+            <span class="text-sm lg:text-base text-white"
+              >Langkah Maju hadir untuk memberikan pendampingan yang optimal
+              dalam setiap fase pertumbuhan anak,
+            </span>
+            <span class="text-sm lg:text-base text-white"
+              >sehingga anak dapat tumbuh dan berkembang secara optimal.</span
+            >
+          </div>
+          <div
+            class="order-4 lg:order-3 flex justify-start lg:justify-end items-center gap-x-6"
+          >
+            <a href="#">
+              <img
+                src="../assets/icons/facebook.png"
+                alt="Facebook"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="../assets/icons/instagram.png"
+                alt="Instagram"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="../assets/icons/youtube.png"
+                alt="Youtube"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full pt-4 border-t border-[#D1D9E2]">
+          <span class="text-[12px] lg:text-sm text-white"
+            >© Copyright 2023
+          </span>
+        </div>
+      </div>
+    </footer>
+    <!-- Close Tag Footer -->
+
+    <script>
+      function showResult() {
+        const totalQuestions = 10;
+        let yesCount = 0;
+        let stimulationList = "";
+  
+        for (let i = 1; i <= totalQuestions; i++) {
+          const answer = document.querySelector(
+            `input[name="pertanyaan${i}"]:checked`
+          );
+  
+          if (answer && answer.value === "ya") {
+            yesCount++;
+          } else if (answer && answer.value === "tidak") {
+            // Menambahkan stimulasi berdasarkan nomor pertanyaan
+            let stimulation = "";
+            let description = "";
+            switch (i) {
+              case 1:
+                description = `Kemampuan mencoret-coret kertas menunjukkan perkembangan Motorik Halus anak.`;
+                stimulation =`
+                  <li>Sering-seringlah ajak anak untuk menggambar bersama. Anda bisa memulai dengan menggambar garis-garis sederhana dan ajak anak untuk mengikuti.</li>
+                  <li>Dudukkan anak di pangkuan Anda, bantu agar dapat memegang pensil/krayon dan ajarkan bagaimana mencoret-coret kertas.</li>
+                `;
+                break;
+              case 2:
+                description = `Kemampuan menyebutkan 3 kata menunjukkan perkembanga Bicara dan Bahasa anak.`;
+                stimulation =`
+                  <li>Pilih kata-kata sederhana yang berhubungan dengan benda atau aktivitas sehari-hari, seperti “makan,” “bola,” atau “susu.” Gunakan kata-kata tersebut secara rutin dalam konteks yang sesuai.</li>
+                  <li>Gunakan lagu atau permainan yang melibatkan kata-kata sederhana dan dorong anak untuk ikut menyanyi atau berbicara.</li>
+                  <li>Lakukan permainan yang melibatkan pengulangan kata-kata sederhana, seperti menyebutkan nama benda yang sering dilihat anak, misalnya "bola", "mobil", atau "piring".
+                    Dorong anak untuk meniru kata-kata yang Anda ucapkan.</li>
+                  <li>Gunakan buku bergambar yang menampilkan objek sederhana dan sebutkan nama-nama objek tersebut secara berulang. Dorong anak untuk meniru kata-kata tersebut.</li>
+                `;
+                break;
+              case 3:
+                description = `Kemampuan menunjuk apa yang diingkan tanpa menangis menunjukkan perkembangan Sosial dan Kemandirian anak.`;
+                stimulation =`
+                  <li>Ajarkan anak isyarat tangan sederhana untuk meminta sesuatu, seperti isyarat “makan” atau “minum”. Gunakan secara konsisten saat mereka menginginkan sesuatu.</li>
+                  <li>Gunakan kata-kata sederhana yang menggambarkan keinginan anak, seperti “mau,” dan minta mereka mengulangi atau mengucapkannya.</li>
+                  <li>Tawarkan dua pilihan mainan atau makanan kepada anak dan dorong mereka untuk menunjuk atau menggerakkan tangan mereka ke arah yang diinginkan.</li>
+                `;
+                break;
+              case 4:
+                description = `Kemampuan minum sendiri dari gelas tanpa banyak tumpah  menunjukkan perkembangan Sosial dan Kemandirian anak.`;
+                stimulation =`
+                  <li>Latih anak minum dari cangkir dengan tutup sedotan terlebih dahulu. Secara bertahap, kurangi penggunaan tutup sedotan.</li>
+                  <li>Gunakan cangkir yang memiliki tutup atau cangkir latihan dengan spout (moncong) untuk mengurangi tumpahan saat anak belajar minum sendiri.</li>
+                  <li>Saat makan atau minum, ajak anak untuk meniru Anda dengan memegang cangkir sendiri. Ini bisa membuat anak lebih cepat belajar.</li>
+                `;
+                break;
+              case 5:
+                description = `Kemampuan meniru ibu dalam melakukan pekerjaan rumah menunjukkan perkembangan Sosial dan Kemandirian anak.`;
+                stimulation =`
+                  <li>Ajak anak ikut merapikan mainan atau mengelap meja dengan memberikan kain lap kecil. Beri contoh dan dorong anak untuk meniru gerakan Anda.</li>
+                  <li>Berikan mainan yang meniru alat-alat rumah tangga seperti sapu kecil atau alat pel untuk merangsang anak bermain peran.</li>
+                  <li>Setiap kali anak mencoba meniru, berikan pujian dan dukungan untuk memperkuat keinginan anak meniru kegiatan yang Anda lakukan.</li>
+                `;
+                break;
+              case 6:
+                description = `Kemampuan menggelindingkan atau melempar bola menunjukkan perkembangan Motorik Halus anak.`;
+                stimulation =`
+                  <li>Gelindingkan bola ke arah anak dengan perlahan dan minta anak untuk menggelindingkan kembali. Latihan ini bisa dilakukan berulang kali untuk meningkatkan keterampilan motorik.</li>
+                  <li>Ajari anak konsep bergiliran dengan menggelindingkan bola secara bergantian antara Anda dan anak.</li>
+                `;
+                break;
+              case 7:
+                description = `Kemampuan membungkuk untuk mengambil kubus tanpa berpegangan, lalu berdiri lagi menunjukkan perkembangan Motorik Kasar anak.`;
+                stimulation =`
+                  <li>Letakkan benda kecil seperti kubus di lantai dan dorong anak untuk membungkuk dan mengambilnya tanpa berpegangan. Setelah itu, minta mereka untuk memberi benda tersebut kepada Anda.</li>
+                  <li>Awalnya, berikan dukungan pada anak saat mereka belajar membungkuk untuk mengambil benda. Secara bertahap, kurangi dukungan agar mereka bisa melakukannya sendiri.</li>
+                  <li>Siapkan kotak yang tidak terlalu dalam dan isi dengan berbagai macam mainan kecil. Ajak anak untuk memasukkan dan mengeluarkan mainan dari kotak.</li>
+                `;
+                break;
+              case 8:
+                description = `Kemampuan berjalan di sepanjang ruangan tanpa terhuyung menunjukkan perkembangan Motorik Kasar anak.`;
+                stimulation =`
+                  <li>Awalnya, pegang tangan anak saat mereka belajar berjalan. Perlahan-lahan lepaskan tangan Anda dan dorong mereka untuk berjalan sendiri.</li>
+                  <li>Buat permainan di mana anak harus berjalan menuju Anda atau mainan favorit mereka.</li>
+                  <li>Pujian dan dorongan selama permainan akan membantu mereka merasa lebih percaya diri. Sediakan mainan dorong yang stabil dan aman yang bisa digunakan anak untuk berlatih berjalan dengan lebih stabil. </li>
+                `;
+                break;
+              case 9:
+                description = `Kemampuan berjalan mundur 5 langkah menunjukkan perkembangan Motorik Kasar anak.`;
+                stimulation =`
+                  <li>Bila anak sudah dapat berjalan tanpa berpegangan, ajari anak cara melangkah mundur. Berikan mainan yang dapat ditarik karena anak akan mengambil langkah mundur untuk dapat
+                    memperhatikan mainan itu. Umumnya anak senang dengan mainan yang bersuara.</li>
+                  <li>Ajak anak bermain permainan sederhana seperti mengikuti jejak atau meniru gerakan Anda berjalan mundur. Buat ini menjadi aktivitas yang menyenangkan, seperti berjalan mundur di atas garis, Anda juga bisa membantu anak dengan memegang tangannya.</li>
+                  <li>Berikan mainan yang bisa didorong, seperti mobil-mobilan, dan ajak anak untuk mendorongnya mundur.</li>
+                `;
+                break;
+              case 10:
+                description = `Kemampuan melakukan perintah yang diberikan dengan isyarat menunjukkan perkembangan Bicara dan Bahasa anak.`;
+                stimulation =`
+                  <li>Gunakan permainan yang melibatkan perintah sederhana dengan isyarat. Misalnya, katakan "Ambil bola" sambil menunjuk bola, lalu beri pujian ketika anak berhasil melakukannya. Ulangi dengan benda-benda lain.</li>
+                  <li>Libatkan anak dalam rutinitas harian yang melibatkan perintah sederhana. Misalnya, ketika akan makan, tunjuk piring dan katakan "Ambil piring" atau saat keluar rumah, tunjuk pintu dan katakan "Tutup pintu". 
+                    Ini membantu anak menghubungkan isyarat dengan tindakan.</li>
+                `;
+                break;
+            }
+            stimulationList += `
+            <div class="gap-y-2">
+              <li class="font-semibold pt-3 ml-1">${description}</li>
+              <ul class="list-disc ml-6">
+                ${stimulation}
+              </ul>
+            </div>
+              `;
+          }
+        }
+  
+        let resultCard = "";
+        if (yesCount >= 9) {
+          resultCard = `
+          <div class="bg-green-500 px-6 py-4 rounded-xl shadow-lg w-full text-white">
+            <h2 class="text-lg font-bold">Hasil Evaluasi</h2>
+            <p class="mt-2">Perkembangan anak sesuai dengan tahap usianya. Pertahankan stimulasi yang sudah dilakukan untuk terus mendukung tumbuh kembang anak.</p>
+          </div>
+        `;
+        } else if (yesCount >= 7) {
+          resultCard = `
+          <div class="bg-yellow-500 px-6 py-4 rounded-xl shadow-lg w-full text-white">
+            <h2 class="text-lg font-bold">Hasil Evaluasi</h2>
+            <p class="mt-2">Perkembangan anak meragukan. Perhatikan lebih lanjut perkembangan anak dan berikan stimulasi tambahan sesuai anjuran. 
+              Lakukan Skrining Perkembangan ulang setelah 2 minggu untuk melihat apakah terdapat kemajuan dalam perkembangan anak.</p>
+          </div>
+        `;
+        } else {
+          resultCard = `
+          <div class="bg-red-500 px-6 py-4 rounded-xl shadow-lg w-full text-white">
+            <h2 class="text-lg font-bold">Hasil Evaluasi</h2>
+            <p class="mt-2">Terdapat kemungkinan penyimpangan dalam perkembangan anak. Lakukan Skrining Perkembangan ulang setelah 2 minggu untuk melihat apakah terdapat
+              kemajuan dalam perkembangan anak. Apabila masih belum ada kemajuan dalam perkembangan anak, disarankan untuk berkonsultasi dengan profesional, 
+              dan dapat melakukan pemeriksaan kesehatan untuk mencari kemungkinan adanya penyakit yang menyebabkan penyimpangan perkembangannya dan lakukan pengobatan.</p>
+          </div>
+        `;
+        }
+  
+        if (stimulationList) {
+          resultCard += `
+          <div class="w-full mt-5">
+            <h2 class="text-lg font-bold">Stimulasi yang bisa dilakukan untuk meningkatkan perkembangan anak</h2>
+            <ol class="list-decimal ml-3 mt-1">
+              ${stimulationList}
+            </ol>
+            <h2 class="text-lg font-bold mt-5">Informasi Tambahan (Perlu Diingat)</h2>
+            <ul class="list-disc ml-3 mt-1">
+              <li>Lakukan stimulasi secara rutin dan konsisten untuk hasil yang maksimal.</li>
+              <li>Jadikan rumah ramah anak. Simpan produk pembersih dan perawatan rumah lainnya di tempat yang aman. Gunakan pagar pengaman dan pastikan pintu terkunci.</li>
+              <li>Dorong anak untuk berempati, misal ketika ia melihat temannya sedih, dorong anak untuk memeluk atau menepuk pundak temannya</li>
+              <li>Berikan kesempatan kepada anak untuk berkomunikasi atau bermain dengan teman sebaya</li>
+              <li>Perhatikan apa yang anak suka dan tidak suka sehingga Anda akan memahami kebutuhannya dan apa yang dapat Anda lakukan untuk membuat ia senang.</li>
+              <li>Stimulasi yang bervariasi dan interaksi yang hangat dengan anak Anda akan sangat membantu dalam perkembangannya.</li>
+              <li>Dalam memberikan respons terhadap perilaku anak yang tidak diinginkan, katakan "tidak" dengan tegas. Jangan berteriak, memukul, atau memberikan penjelasan yang panjang. "Time out" selama 30 detik-1 menit mungkin dapat membantu.</li>
+              <li>Setiap anak unik dan memiliki kecepatan perkembangan yang berbeda. Yang terpenting adalah Anda memberikan kasih sayang dan stimulasi yang tepat untuk mendukung pertumbuhan dan perkembangannya.</li>
+              <li>Jika anak Anda sudah berusia 20 bulan ke atas dan belum menunjukkan tanda-tanda perkembangan dalam hal ini, sebaiknya konsultasikan dengan dokter anak. Dokter akan melakukan pemeriksaan untuk memastikan tidak ada masalah kesehatan yang mendasarinya.</li>
+            </ul>
+          </div>
+        `;
+        }
+  
+        document.getElementById("result").innerHTML = resultCard;
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

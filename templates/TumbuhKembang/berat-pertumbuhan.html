@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertumbuhan</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/icon-LM.png" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#F9FBFD] overflow-x-hidden">
+    <!-- Open Tag Header -->
+    <header class="fixed-navbar w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-8 lg:px-12 flex justify-between items-center py-3"
+      >
+        <div class="shrink-0">
+          <img
+            src="assets/images/logo.png"
+            alt="Baby Care Logo"
+            class="w-40 md:w-44 lg:w-48"
+          />
+        </div>
+
+        <!-- Desktop Navbar -->
+        <nav
+          class="hidden min-[850px]:block navbar navbar-expand-lg navbar-light"
+        >
+          <ul class="flex items-center gap-x-12">
+            <li>
+              <a href="dashboard.html" class="text-white custom-hover"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <div class="nav-item dropdown">
+                <a
+                  href="javascript:void(0);"
+                  class="nav-link dropdown-toggle text-white custom-hover"
+                  data-toggle="dropdown"
+                  >Fitur</a
+                >
+                <div class="dropdown-menu">
+                  <a href="perkembangan.html" class="dropdown-item"
+                    >Skrining Perkembangan</a
+                  >
+                  <a href="gizi-pertumbuhan.html" class="dropdown-item"
+                    >Grafik Pertumbuhan</a
+                  >
+                  <a href="imunisasi.html" class="dropdown-item">Imunisasi</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="catatan-perkembangan.html"
+                class="text-white custom-hover"
+                >Catatan Perkembangan</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Profil -->
+        <div class="hidden min-[850px]:block">
+          <div class="flex items-center gap-x-3">
+            <a href="profil.html">
+              <h1
+                id="user_full_name"
+                class="font-semibold text-white text-[16px]"
+              >
+                Jaezlyn
+              </h1>
+            </a>
+            <a href="profil.html">
+              <div class="ml-2">
+                <img
+                  src="assets/images/mommy.webp"
+                  alt="User's Profile Picture"
+                  class="w-[45px] h-[45px] rounded-full object-cover"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div class="block min-[850px]:hidden" id="open_modal_btn">
+          <svg
+            class="fill-white text-[26px] cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </div>
+
+        <!-- Mobile Modal -->
+        <div
+          class="mobile_modal translate-y-[100%] fixed top-0 left-0 w-full h-screen bg-[#0F3F25] px-4 duration-500 ease-in-out z-[999] overflow-y-auto"
+        >
+          <div class="w-full">
+            <ul class="flex flex-col px-4 pt-[80px] gap-y-6">
+              <li>
+                <div class="flex flex-col gap-x-3">
+                  <a href="profil.html">
+                    <div class="ml-2">
+                      <img
+                        src="assets/images/mommy.webp"
+                        alt="User's Profile Picture"
+                        class="w-[80px] h-[80px] rounded-full object-cover"
+                      />
+                    </div>
+                  </a>
+
+                  <a href="profil.html">
+                    <h1
+                      id="user_full_name"
+                      class="font-semibold text-white text-[16px] pt-2 pb-1 px-2"
+                    >
+                      Jaezlyn
+                    </h1>
+                  </a>
+                </div>
+              </li>
+
+              <span class="w-[150px] border-t-2 border-[#FFCB40]"></span>
+
+              <li>
+                <a
+                  href="dashboard.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/home.png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Beranda</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/toy-block (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Skrining Perkembangan</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="gizi-pertumbuhan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/growth (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Grafik Pertumbuhan</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="imunisasi.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/vaccines (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Imunisasi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="catatan-perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/playtime (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Catatan Perkembangan</span
+                  >
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <!-- Close Modal -->
+          <div class="absolute top-6 right-6" id="close_modal_btn">
+            <svg
+              class="fill-white text-[26px] cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Close Tag Header -->
+
+    <!-- Open Tag Content -->
+    <div class="pt-[78px] pb-8 min-[840px]:pt-[88px] xl:pb-0">
+      <div
+        class="flex flex-col xl:flex-row justify-between w-full h-auto xl:h-screen px-[20px] sm:px-[35px] min-[840px]:pl-[55px] min-[840px]:pr-[55px] xl:pr-0 gap-x-[55px] select-none"
+      >
+        <!-- begin::Left Dashboard -->
+        <div class="py-8 md:py-10 flex flex-col w-full gap-y-[30px] xl:gap-y-[20px] min-[1600px]:gap-y-[30px]">
+          <!-- begin::Parameter Pertumbuhan -->
+          <div class="flex flex-col gap-y-3">
+            <div
+              class="flex flex-col justify-between items-start min-[840px]:items-center"
+            >
+              <h3 class="font-bold text-[#005E0F] text-[16px] md:text-[18px]">Parameter Pertumbuhan Anak</h3>
+              <!-- Tanggal Terakhir Update -->
+              <span id="last_updated_el" class="text-xs text-[#898989]">TGL terakhir update</span>
+            </div>
+
+            <div
+              class="flex flex-row flex-between gap-x-[25px] max-[600px]:gap-x-[15px] gap-y-[20px]"
+            >
+              <!-- Berat -->
+              <a href="berat-pertumbuhan.html" class="w-full block">
+                <div
+                  class="flex flex-col w-full bg-[#DFF1FF] p-[32px] max-[600px]:p-[14px] rounded-2xl gap-y-3 shadow-[0_2px_4px_0px_rgba(0,0,0,0.10)]"
+                >
+                  <img
+                    src="assets/icons/berat-badan.png"
+                    alt="Berat Badan"
+                    class="h-[40px] max-[600px]:h-[30px] object-contain"
+                  />
+                  <div class="flex flex-col justify-center text-center">
+                    <span class="text-lg max-[600px]:text-base" style="color: black">Berat</span>
+                    <div
+                      class="w-full flex justify-center items-end gap-1 text-[#54ABF0]"
+                    >
+                      <h1 class="berat__badan text-2xl max-[600px]:text-lg font-bold">26</h1>
+                      <span class="text-lg max-[760px]:text-[13px]">kg</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- Tinggi-->
+              <a href="tinggi-pertumbuhan.html" class="w-full block">
+                <div
+                  class="flex flex-col w-full bg-[#EAEAEA] p-[32px] max-[600px]:p-[14px] rounded-2xl gap-y-3 shadow-[0_2px_4px_0px_rgba(0,0,0,0.10)]"
+                >
+                  <img
+                    src="assets/icons/weight-scale.png"
+                    alt="Tinggi Badan"
+                    class="h-[40px] max-[600px]:h-[30px] object-contain"
+                  />
+                  <div class="flex flex-col justify-center text-center">
+                    <span class="text-lg max-[600px]:text-base" style="color: black">Tinggi</span>
+                    <div
+                      class="w-full flex justify-center items-end gap-1 text-[#696969]"
+                    >
+                      <h1 class="tinggi__badan text-2xl max-[600px]:text-lg font-bold">51</h1>
+                      <span class="text-lg max-[600px]:text-[13px]">cm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- Status Gizi -->
+              <a href="gizi-pertumbuhan.html" class="w-full block" >
+                <div
+                  class="flex flex-col w-full bg-[#EAEAEA] p-[32px] max-[600px]:p-[14px] rounded-2xl gap-y-3 shadow-[0_2px_4px_0px_rgba(0,0,0,0.10)]"
+                >
+                  <img
+                    src="assets/icons/nutrition (2).png"
+                    alt="Nutrisi"
+                    class="h-[40px] max-[600px]:h-[30px] object-contain"
+                  />
+                  <div class="flex flex-col justify-center text-center">
+                    <span class="text-lg max-[600px]:text-base" style="color: black">Status Gizi</span>
+                    <div
+                      class="w-full flex justify-center items-end gap-1 text-[#696969]"
+                    >
+                      <h1 class="status_gizi text-2xl max-[600px]:text-lg font-bold">Gizi Baik</h1>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- end::Parameter Pertumbuhan -->
+
+          <!-- begin::Button Tambah Pertumbuhan -->
+          <div class="flex justify-end">
+            <div class="flex flex-col gap-y-3 w-full md:max-w-[325px] mt-1 place-items-end">
+              <button onclick="addBabyGrowth()" class="flex flex-col w-full justify-center items-center text-center gap-x-2 bg-[#FFC10E] p-2.5 rounded-lg outline:none">
+                <span class="text-[#B05F00] font-semibold text-[17px] lg:text-[15px]">Tambah Data Pertumbuhan</span>
+              </button>
+            </div>
+          </div>
+          <!-- end::Button Tambah Pertumbuhan -->
+
+          <!-- begin::Interpretasi Pertumbuhan -->
+          <div class="w-full min-h-[200px] rounded-md outline outline-2 outline-[#D1D9E2] p-[15px] mt-3">
+            <div class="flex flex-col gap-y-6">
+              <div class="md:col-span-2 flex items-center w-full overflow-hidden">
+                <div class="px-4 py-2 rounded-lg">
+                  <div class="flex items-center pb-2">
+                    <p class="font-semibold mr-3 text-[18px] max-[700px]:text-[16px]">Interpretasi :</p>
+                    <div id="" class="bg-yellow-500 text-white px-4 py-2 rounded-full text-[16px] max-[700px]:text-[15px]">Berat Badan Kurang (Underweight)</div>
+                  </div>
+                  <div class="text-justify pt-2 gap-y-2">
+                    <p id="" class="text-[16px] max-[700px]:text-[15px] mb-2">Berat badan anak di bawah standar, menunjukkan adanya risiko malnutrisi.</p>
+                    <p id="" class="text-[16px] max-[700px]:text-[15px] font-semibold">Langkah yang Disarankan :
+                      <ul class="list-disc pt-2 gap-y-2 ml-8">
+                        <li class="text-[16px] max-[700px]:text-[15px]">Perbanyak pemberian ASI bagi bayi, dan berikan makanan pendamping ASI yang bergizi untuk anak yang lebih tua. Pastikan anak mendapatkan cukup protein, lemak sehat, dan karbohidrat.</li>
+                        <li class="text-[16px] max-[700px]:text-[15px]">Berikan camilan sehat di antara waktu makan utama, seperti buah-buahan, yogurt, atau keju.</li>
+                        <li class="text-[16px] max-[700px]:text-[15px]">Pertimbangkan untuk berkonsultasi dengan dokter atau ahli gizi untuk menyusun rencana peningkatan berat badan yang tepat.</li>
+                        <li class="text-[16px] max-[700px]:text-[15px]">Lakukan pemantauan berat badan secara teratur untuk memastikan anak menunjukkan perbaikan.</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end::Interpretasi Pertumbuhan -->
+
+          <!-- begin::Chart -->
+        <div
+        class="w-full rounded-md outline outline-2 outline-[#D1D9E2] p-[15px] mt-3"
+      >
+        <div class="flex flex-col gap-y-6">
+          <div class="grid md:grid-cols-3 gap-y-3">
+            <div
+              class="md:col-span-2 flex items-center w-full overflow-hidden"
+            >
+              <div class="flex flex-col overflow-hidden gap-x-2">
+                <h1
+                  id="chart_pilihan"
+                  class="font-opensans text-base lg:text-lg font-extrabold"
+                >
+                  Berat badan (kg)
+                </h1>
+              </div>
+            </div>
+          </div>
+
+          <div id="chart" class="w-full">
+            <canvas id="weight_chart" class="w-full"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- end::Chart -->
+          
+        </div>
+        <!-- end::Left Dashboard -->
+
+        <!-- begin::Right Dashboard -->
+        <div
+          class="p-6 sm:p-8 min-[840px]:p-10 flex flex-col w-full xl:max-w-[325px] bg-white shadow-[0_4px_8px_0px_rgba(0,0,0,0.10)] gap-y-10 xl:gap-y-[14px] min-[1600px]:gap-y-[30px] rounded-2xl xl:rounded-none"
+        >
+          <div class="gap-y-3">
+            <h3 class="text-[18px] md:text-[16px] font-bold text-[#005E0F] pb-4">Data Anak</h3>
+
+            <div class="w-full h-[150px] bg-[#0F3F25] rounded-[16px] gap-y-2 shadow-[2px_2px_8px_2px_rgba(0,0,0,0.20)]">
+              <div class="w-full h-[110px] bg-white items-center text-center rounded-[14px] p-3"> 
+                <div class="flex items-center justify-content-start text-center">
+                    <div class="items-center">
+                      <img class="items-center w-[75px] mr-4 ml-1" src="assets/icons/boy.png" alt="" />
+                    </div>
+                    <div class="items-center text-center justify-center">
+                      <p class="text-[17px] lg:text-[15px] font-semibold">Argi Kalandra</p>
+                    </div>
+                </div>
+              </div>
+              <div class="p-2 text-end">
+                <p class="text-white mr-3">0 tahun 6 bulan</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-y-3 pt-4 ">
+              <button onclick="addBabyData()" class="flex flex-col w-full justify-center items-center text-center gap-x-2 bg-[#FFC10E] p-2.5 rounded-lg outline:none">
+                <span class="text-[#B05F00] font-semibold text-[16px] lg:text-[14px]"
+                  >Tambah Data Anak</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <!-- end::Left Dashboard -->
+      </div>
+    </div>
+    <!-- Close Tag Content -->
+
+    <!-- Open Modal -->
+    <!-- end::Tambah Data Anak-->
+    <div
+          id="add_modal_container"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 modal-container"
+        >
+          <div class="flex w-full h-full justify-center items-center modal-content">
+            <form
+              id="add_modal_form"
+              class="relative flex flex-col w-full max-w-[600px] py-[20px] px-[18px] min-[840px]:px-[26px] bg-white rounded-xl gap-y-6 min-[840px]:gap-y-8 overflow-y-auto max-h-[80vh]"
+            >
+              <div class="text-start min-[840px]:text-center">
+                <h1
+                  class="font-bold text-[22px] min-[840px]:text-[24px] text-[#0F3F25]"
+                >
+                  Tambah Data Anak
+                </h1>
+                <p class="text-xs min-[840px]:text-sm text-[#898989]">
+                  Lengkapi semua data mengenai anak anda
+                </p>
+              </div>
+              <div class="flex flex-col gap-y-5">
+                <input
+                  type="text"
+                  id="nama"
+                  class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] placeholder:text-[#898989] rounded-lg"
+                  placeholder="Nama Lengkap"
+                  required
+                />
+                <div class="flex flex-col form-label ml-1">
+                  <label for="nama-label" class="ml-1">Tanggal Lahir</label>
+                  <input
+                    type="date"
+                    id="tanggal_lahir"
+                    class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] placeholder:text-[#898989] rounded-lg"
+                    required
+                  />
+                </div>
+                <div class="form-group m-0 p-0 ml-1">
+                  <label for="" class="required form-label">Jenis Kelamin</label>
+                  <div class="form-check form-check-custom form-check-solid ml-2">
+                    <label class="form-check-label">
+                      <input
+                        class="form-check-input mr-1"
+                        type="radio"
+                        name="jenisKel"
+                        value="Laki-Laki"
+                        required
+                      />
+                      Laki-Laki
+                    </label>
+                    <label class="form-check-label ml-12">
+                      <input
+                        class="form-check-input mr-1"
+                        type="radio"
+                        name="jenisKel"
+                        value="Perempuan"
+                        required
+                      />
+                      Perempuan
+                    </label>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  id="berat"
+                  class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] placeholder:text-[#898989] rounded-lg"
+                  pattern="^[0-9]*\.?[0-9]*$"
+                  placeholder="Berat Badan (kg) cth: (2.55)"
+                  required
+                />
+                <input
+                  type="text"
+                  id="tinggi"
+                  class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] placeholder:text-[#898989] rounded-lg"
+                  pattern="^[0-9]*\.?[0-9]*$"
+                  placeholder="Tinggi Badan (cm) cth: (6.2)"
+                  required
+                />
+              </div>
+              <button
+                id="sweetalert_simpan"
+                type="submit"
+                class="w-full bg-[#0F3F25] px-2 py-2.5 text-white rounded-lg text-sm min-[840px]:text-base"
+              >
+                Simpan
+              </button>
+    
+              <button
+                id="close_add_modal"
+                type="button"
+                class="bg-[#0F3F25] px-1.5 min-[840px]:px-2 py-1 absolute top-4 right-4 min-[840px]:right-6 cursor-pointer rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 min-[840px]:w-5 fill-white"
+                  viewBox="0 0 384 512"
+                >
+                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+    <!-- end::Tambah Data Anak -->
+    
+    <!-- begin::Tambah Data Pertumbuhan-->
+    <div id="growth_modal_container" class="fixed top-0 left-0 w-full h-screen bg-black/50" style="display: none;">
+      <div class="flex w-full h-full justify-center items-center px-6">
+        <form id="growth_modal_form" class="relative flex flex-col w-full max-w-[600px] py-[26px] px-[18px] min-[840px]:px-[26px] bg-white rounded-xl gap-y-6 min-[840px]:gap-y-8">
+          <div class="text-start min-[840px]:text-center">
+            <h1 class="font-bold text-[22px] min-[840px]:text-[24px] text-[#0F3F25]">Tambah Data Pertumbuhan</h1>
+          </div>
+          <div class="flex flex-col gap-y-5">
+            <input type="date" id="tanggal_pertumbuhan" class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] placeholder:text-[#898989] rounded-lg" required>
+            <input type="text" id="berat" class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] placeholder:text-[#898989] rounded-lg" pattern="^[0-9]*\.?[0-9]*$" placeholder="Berat Badan cth:(2.55)" required>
+            <input type="text" id="tinggi" class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] placeholder:text-[#898989] rounded-lg" pattern="^[0-9]*\.?[0-9]*$" placeholder="Tinggi Badan cth:(6.2)" required>
+          </div>
+          <button id="sweetalert_simpan" type="submit" class="w-full bg-[#0F3F25] px-2 py-2.5 text-white rounded-lg text-sm min-[840px]:text-base">
+            Simpan
+          </button>
+    
+          <button id="close_growth_modal" type="button" class="bg-[#0F3F25] px-1.5 min-[840px]:px-2 py-1 absolute top-4 right-4 min-[840px]:right-6 cursor-pointer rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 min-[840px]:w-5 fill-white" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- end::Tambah Data Pertumbuhan -->
+
+    <!-- Open Tag Footer -->
+    <footer class="w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex flex-col justify-between items-center py-4 lg:py-8 gap-y-8"
+      >
+        <div class="w-full flex flex-col gap-y-5">
+          <div class="order-1">
+            <img
+              src="assets/images/logo.png"
+              alt="Langkah Maju Logo"
+              class="w-40 md:w-44 lg:w-48"
+            />
+          </div>
+          <div class="order-2 flex flex-col ml-1">
+            <span class="text-sm lg:text-base text-white"
+              >Langkah Maju hadir untuk memberikan pendampingan yang optimal dalam setiap fase pertumbuhan anak, </span
+            >
+            <span class="text-sm lg:text-base text-white"
+              >sehingga anak dapat tumbuh dan berkembang secara optimal.</span
+            >
+          </div>
+          <div
+            class="order-4 lg:order-3 flex justify-start lg:justify-end items-center gap-x-6"
+          >
+            <a href="#">
+              <img
+                src="assets/icons/facebook.png"
+                alt="Facebook"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/instagram.png"
+                alt="Instagram"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/youtube.png"
+                alt="Youtube"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full pt-4 border-t border-[#D1D9E2]">
+          <span class="text-[12px] lg:text-sm text-white"
+            >© Copyright 2023
+          </span>
+        </div>
+      </div>
+    </footer>
+    <!-- Close Tag Footer -->
+
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/data-anak.js"></script>
+    <script src="assets/js/data-pertumbuhan.js"></script>
+    <script src="assets/js/data-chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

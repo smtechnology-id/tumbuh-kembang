@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LangkahMaju</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/icon-LM.png" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#F9FBFD] overflow-x-hidden">
+    <!-- Open Tag Header -->
+    <header class="fixed-navbar w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-8 lg:px-12 flex justify-between items-center py-3"
+      >
+        <div class="shrink-0">
+          <img
+            src="assets/images/logo.png"
+            alt="Baby Care Logo"
+            class="w-40 md:w-44 lg:w-48"
+          />
+        </div>
+
+        <!-- Desktop Navbar -->
+        <nav class="hidden lg:block navbar navbar-expand-lg navbar-light">
+          <ul class="flex items-center gap-x-12">
+            <li>
+              <a href="" class="text-white custom-hover"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <div class="nav-item dropdown">
+                <a
+                  href="javascript:void(0);"
+                  class="nav-link dropdown-toggle text-white custom-hover"
+                  data-toggle="dropdown"
+                  >Fitur</a
+                >
+                <div class="dropdown-menu">
+                  <a href="" class="dropdown-item"
+                    >Skrining Perkembangan</a
+                  >
+                  <a href="" class="dropdown-item"
+                    >Grafik Pertumbuhan</a
+                  >
+                  <a href="" class="dropdown-item"
+                    >Imunisasi</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="" class="text-white custom-hover"
+                >Catatan Perkembangan</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Button Login -->
+        <div class="hidden lg:block">
+          <a
+            href="login.html"
+            class="flex justify-center items-center gap-x-2 bg-[#FFC10E] py-2 px-8 rounded-lg"
+          >
+            <span class="text-[#B05F00] font-semibold text-lg">Login</span>
+          </a>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div class="block lg:hidden" id="open_modal_btn">
+          <svg
+            class="fill-white text-[26px] cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </div>
+
+        <!-- Mobile Modal -->
+        <div
+          class="mobile_modal translate-y-[100%] fixed top-0 left-0 w-full h-screen bg-[#0F3F25] px-4 duration-500 ease-in-out z-[999] overflow-y-auto"
+        >
+          <div class="w-full">
+            <ul class="flex flex-col px-4 pt-[80px] gap-y-6">
+              <li>
+                <a
+                  href="dashboard.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/home.png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Beranda</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/toy-block (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Skrining Perkembangan</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="gizi-pertumbuhan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/growth (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Grafik Pertumbuhan</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="imunisasi.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/vaccines (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Imunisasi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="catatan-perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/playtime (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Catatan Perkembangan</span
+                  >
+                </a>
+              </li>
+
+              <span class="w-[150px] border-t-2 border-[#FFCB40]"></span>
+              <li>
+                <div class="w-[110px] lg:block">
+                  <a
+                    href="login.html"
+                    class="flex justify-center items-center gap-x-2 bg-[#FFC10E] py-2 px-8 rounded-lg"
+                  >
+                    <span class="text-[#B05F00] font-semibold text-lg">Login</span>
+                  </a>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <!-- Close Modal -->
+          <div class="absolute top-6 right-6" id="close_modal_btn">
+            <svg
+              class="fill-white text-[26px] cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </div>
+        </div>
+        
+      </div>
+    </header>
+    <!-- Close Tag Header -->
+
+    <!-- Open Tag Content Landing-->
+    <section class="w-full flex justify-center items-center pt-[70px] md:pt-[75px] lg:pt-[88px]">
+      <div
+        class="bg-cover bg-center w-full h-[450px] lg:h-[553px] overflow-hidden"
+        style="background-image: url(assets/images/mom-baby.jpg)"
+      >
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute inset-0 flex items-center">
+          <div class="container">
+            <div class="row justify-content-start">
+              <div class="p-4">
+                <p
+                  class="text-white animated slideInDown text-[28px] md:text-[34px] lg:text-[42px] font-extrabold font-opensans"
+                >
+                  Pantau Tumbuh Kembang Anak
+                </p>
+                <p
+                  class="text-white animated slideInDown text-[28px] md:text-[34px] :text-[42px] font-extrabold font-opensans pb-3"
+                >
+                  Dengan
+                  <img
+                    class="inline-block w-[190px] md:w-[240px] lg:w-[290px]"
+                    src="assets/images/nama-logo.png"
+                    alt="Langkah Maju"
+                  />
+                </p>
+                <p
+                  class="animated slideInDown font-bold text-[#FFC10E] text-[13px] md:text-base lg:text-lg pb-2"
+                >
+                  Website Kesehatan Anak untuk Memastikan Si Kecil
+                </p>
+                <p
+                  class="animated slideInDown font-bold text-[#FFC10E] text-[13px] md:text-base lg:text-lg"
+                >
+                  Berkembang Optimal Sesuai dengan Usianya!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Close Tag Content Landing -->
+
+    <!-- Open Tag Content Fitur -->
+    <section class="relative w-full bg-white" id="fitur">
+      <div
+        class="relative w-full max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 z-20"
+      >
+        <div class="flex flex-col justify-center items-center py-20 gap-y-16">
+          <div class="flex flex-col justify-center text-center gap-y-2.5">
+            <h1 class="font-opensans text-[22px] lg:text-[26px] text-[#005E0F] font-extrabold">
+              Fitur Langkah Maju
+            </h1>
+            <p class="text-[#36455B] text-sm lg:text-base">
+              Berikut fitur-fitur yang dapat ibu gunakan untuk mengetahui tumbuh
+              kembang si kecil
+            </p>
+          </div>
+
+          <!-- Begiin::Coloumn Fitur -->
+          <div
+            class="w-full max-w-[1280px] grid grid-col-1 md:grid-cols-2 gap-8 justify-center text-center"
+          >
+            <a href="login.html">
+              <div
+                class="bg-white rounded-lg p-6 flex flex-col items-center hover-fitur shadow-[2px_2px_10px_0px_rgba(0,0,0,0.1)]"
+              >
+                <img
+                  class="w-[75px] lg:w-[95px] pb-3"
+                  src="assets/icons/toy-block.png"
+                  alt=""
+                />
+                <h4 class="text-base lg:text-lg font-bold mb-2">Skrining Perkembangan</h4>
+                <p class="text-gray-600 text-sm lg:text-base">
+                  Membantu mengidentifikasi risiko keterlambatan perkembangan
+                  pada anak
+                </p>
+              </div>
+            </a>
+            <a href="login.html">
+              <div
+                class="bg-white rounded-lg p-6 flex flex-col items-center hover-fitur shadow-[2px_2px_10px_0px_rgba(0,0,0,0.1)]"
+              >
+                <img
+                  class="w-[75px] lg:w-[95px] pb-3"
+                  src="assets/icons/growth.png"
+                  alt=""
+                />
+                <h4 class="text-base lg:text-lg font-bold mb-2">Grafik Pertumbuhan</h4>
+                <p class="text-gray-600 text-sm lg:text-base">
+                  Membantu mengetahui status gizi anak dan memantau nilai
+                  pertumbuhan anak
+                </p>
+              </div>
+            </a>
+            <a href="login.html">
+              <div
+                class="bg-white rounded-lg p-6 flex flex-col items-center hover-fitur shadow-[2px_2px_10px_0px_rgba(0,0,0,0.1)]"
+              >
+                <img
+                  class="w-[75px] lg:w-[95px] pb-3"
+                  src="assets/icons/vaccines.png"
+                  alt=""
+                />
+                <h4 class="text-base lg:text-lg font-bold mb-2">Jadwal Imunisasi</h4>
+                <p class="text-gray-600 text-sm lg:text-base">
+                  Memberikan informasi terkait jadwal imunisasi dan manfaat
+                  vaksin yang akan diberikan untuk tumbuh kembang anak
+                </p>
+              </div>
+            </a>
+            <a href="login.html">
+              <div
+                class="bg-white rounded-lg p-6 flex flex-col items-center hover-fitur shadow-[2px_2px_10px_0px_rgba(0,0,0,0.1)]"
+              >
+                <img
+                  class="w-[75px] lg:w-[95px] pb-3"
+                  src="assets/icons/playtime.png"
+                  alt=""
+                />
+                <h4 class="text-base lg:text-lg font-bold mb-2">Catatan Perkembangan</h4>
+                <p class="text-gray-600 text-sm lg:text-base">
+                  Catat semua momen penting proses perkembangan anak, karena setiap tahap perkembangan anak adalah momen berharga
+                </p>
+              </div>
+            </a>
+          </div>
+          <!-- End::Coloumn Fitur -->
+        </div>
+      </div>
+    </section>
+    <!-- Close Tag Content Fitur -->
+
+    <!-- Open Tag Content -->
+    <section class="relative w-full bg-gray-100" id="penjelasan">
+      <div
+        class="relative w-full max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 z-20"
+      >
+        <div class="justify-center items-center py-20 gap-y-16">
+          <h1
+            class="font-opensans text-[20px] lg:text-[26px] text-[#005E0F] font-extrabold text-center pb-6"
+          >
+            Platform Kesehatan Untuk Memantau Tumbuh Kembang Anak
+          </h1>
+          <div class="p-2 text-justify leading-loose text-sm lg:text-base">
+            <p>
+              Langkah Maju adalah platform kesehatan yang hadir untuk menemani
+              setiap langkah pertumbuhan dan perkembangan anak anda secara
+              optimal. Langkah Maju berkomitmen untuk memberikan informasi yang
+              akurat, sehingga anda dapat menjadi orang tua yang lebih siap dan
+              percaya diri.
+              <br /><br />
+              Dengan Langkah Maju, anda dapat menemukan berbagai informasi
+              penting yang meliputi :
+              <br /><br />
+              <ul class="list-disc pl-4">
+                <li>Pantau Pertumbuhan : Lacak pertumbuhan fisik anak anda dengan
+                  mudah. Masukkan data berat badan dan tinggi badan secara berkala
+                  untuk mengetahui status gizi anak, lalu bandingan dengan grafik
+                  pertumbuhan standar. Perhitungan dilakukan menggunakan metode
+                  Z-skor, yaitu metode untuk mengukur status gizi anak.</li>
+                  <br>
+                <li>Skrining Perkembangan : Lakukan skrining perkembangan anak Anda
+                  untuk mengetahui apakah perkembangannya sesuai dengan usianya.
+                  Kami akan memberikan informasi mengenai stimulasi yang tepat
+                  berdasarkan hasil skrining yang telah dilakukan.</li>
+                  <br>
+                <li>Jadwal Imunisasi Lengkap : Ketahui jadwal imunisasi yang tepat
+                  untuk anak anda, mulai dari bayi hingga anak usia 5 tahun. Kami
+                  menyajikan informasi yang mudah dipahami dan sesuai dengan
+                  rekomendasi dari Ikatan Dokter Anak Indonesia (IDAI).</li>
+                  <br>
+                <li>Catatan Tumbuh Kembang : Simpan semua momen berharga
+                  perkembangan anak Anda dengan mencatat setiap tonggak penting,
+                  seperti kata pertama, langkah pertama, atau gigi susu pertama.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Close Tag Content -->
+
+    <!-- Open Tag Footer -->
+    <footer class="w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex flex-col justify-between items-center py-4 lg:py-8 gap-y-8"
+      >
+        <div class="w-full flex flex-col gap-y-5">
+          <div class="order-1">
+            <img
+              src="assets/images/logo.png"
+              alt="Langkah Maju Logo"
+              class="w-40 md:w-44 lg:w-48"
+            />
+          </div>
+          <div class="order-2 flex flex-col ml-1">
+            <span class="text-sm lg:text-base text-white"
+              >Langkah Maju hadir untuk memberikan pendampingan yang optimal dalam setiap fase pertumbuhan anak, </span
+            >
+            <span class="text-sm lg:text-base text-white"
+              >sehingga anak dapat tumbuh dan berkembang secara optimal.</span
+            >
+          </div>
+          <div
+            class="order-4 lg:order-3 flex justify-start lg:justify-end items-center gap-x-6"
+          >
+            <a href="#">
+              <img
+                src="assets/icons/facebook.png"
+                alt="Facebook"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/instagram.png"
+                alt="Instagram"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/youtube.png"
+                alt="Youtube"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full pt-4 border-t border-[#D1D9E2]">
+          <span class="text-[12px] lg:text-sm text-white"
+            >© Copyright 2023
+          </span>
+        </div>
+      </div>
+    </footer>
+    <!-- Close Tag Footer -->
+
+    <script src="assets/js/modal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

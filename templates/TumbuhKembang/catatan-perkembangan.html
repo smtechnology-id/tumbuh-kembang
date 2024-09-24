@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catatan Perkembangan</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/icon-LM.png" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#F9FBFD] overflow-x-hidden">
+    <!-- Open Tag Header -->
+    <header class="fixed-navbar w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-8 lg:px-12 flex justify-between items-center py-3"
+      >
+        <div class="shrink-0">
+          <img
+            src="assets/images/logo.png"
+            alt="Baby Care Logo"
+            class="w-40 md:w-44 lg:w-48"
+          />
+        </div>
+
+        <!-- Desktop Navbar -->
+        <nav
+          class="hidden min-[850px]:block navbar navbar-expand-lg navbar-light"
+        >
+          <ul class="flex items-center gap-x-12">
+            <li>
+              <a href="dashboard.html" class="text-white custom-hover"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <div class="nav-item dropdown">
+                <a
+                  href="javascript:void(0);"
+                  class="nav-link dropdown-toggle text-white custom-hover"
+                  data-toggle="dropdown"
+                  >Fitur</a
+                >
+                <div class="dropdown-menu">
+                  <a href="perkembangan.html" class="dropdown-item"
+                    >Skrining Perkembangan</a
+                  >
+                  <a href="gizi-pertumbuhan.html" class="dropdown-item"
+                    >Grafik Pertumbuhan</a
+                  >
+                  <a href="imunisasi.html" class="dropdown-item">Imunisasi</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="catatan-perkembangan.html"
+                class="text-white custom-hover"
+                >Catatan Perkembangan</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Profil -->
+        <div class="hidden min-[850px]:block">
+          <div class="flex items-center gap-x-3">
+            <a href="profil.html">
+              <h1
+                id="user_full_name"
+                class="font-semibold text-white text-[16px]"
+              >
+                Jaezlyn
+              </h1>
+            </a>
+            <a href="profil.html">
+              <div class="ml-2">
+                <img
+                  src="assets/images/mommy.webp"
+                  alt="User's Profile Picture"
+                  class="w-[45px] h-[45px] rounded-full object-cover"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div class="block min-[850px]:hidden" id="open_modal_btn">
+          <svg
+            class="fill-white text-[26px] cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </div>
+
+        <!-- Mobile Modal -->
+        <div
+          class="mobile_modal translate-y-[100%] fixed top-0 left-0 w-full h-screen bg-[#0F3F25] px-4 duration-500 ease-in-out z-[999] overflow-y-auto"
+        >
+          <div class="w-full">
+            <ul class="flex flex-col px-4 pt-[80px] gap-y-6">
+              <li>
+                <div class="flex flex-col gap-x-3">
+                  <a href="profil.html">
+                    <div class="ml-2">
+                      <img
+                        src="assets/images/mommy.webp"
+                        alt="User's Profile Picture"
+                        class="w-[80px] h-[80px] rounded-full object-cover"
+                      />
+                    </div>
+                  </a>
+
+                  <a href="profil.html">
+                    <h1
+                      id="user_full_name"
+                      class="font-semibold text-white text-[16px] pt-2 pb-1 px-2"
+                    >
+                      Jaezlyn
+                    </h1>
+                  </a>
+                </div>
+              </li>
+
+              <span class="w-[150px] border-t-2 border-[#FFCB40]"></span>
+
+              <li>
+                <a
+                  href="dashboard.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/home.png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Beranda</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/toy-block (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Skrining Perkembangan</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="gizi-pertumbuhan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/growth (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Grafik Pertumbuhan</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="imunisasi.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/vaccines (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Imunisasi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="catatan-perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/playtime (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Catatan Perkembangan</span
+                  >
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <!-- Close Modal -->
+          <div class="absolute top-6 right-6" id="close_modal_btn">
+            <svg
+              class="fill-white text-[26px] cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Close Tag Header -->
+
+    <!-- Open Tag Content -->
+    <div class="pt-[78px] pb-8 min-[840px]:pt-[80px] xl:pb-0">
+      <div
+        class="flex flex-col xl:flex-row justify-between w-full h-auto xl:h-screen px-[20px] py-[20px] md:py-0 sm:px-[35px] min-[840px]:pl-[55px] min-[840px]:pr-[55px] xl:pr-0 gap-x-[55px] select-none"
+      >
+        <!-- begin::Left Dashboard -->
+        <div
+          class="flex flex-col w-full lg:mb-12 xl:gap-y-[20px] min-[1600px]:gap-y-[30px]"
+        >
+          <!-- begin::Dashboard - Catat Perkembangan -->
+          <div class="flex flex-col w-full h-auto xl:h-screen gap-y-4">
+            <div class="w-full flex flex-col text-start mb-2 md:mt-8">
+              <h1
+                class="font-opensans text-[18px] min-[840px]:text-[20px] text-[#005E0F] font-extrabold mb-1"
+              >
+                Catat Perkembangan
+              </h1>
+              <p class="text-[#898989] text-[14px] min-[840px]:text-[15px]">
+                Abadikan setiap momen dari perkembangan si kecil
+              </p>
+            </div>
+
+            <div class="flex flex-col w-full h-full gap-y-5">
+              <!-- begin::Button Tambah Pertumbuhan -->
+              <div class="flex justify-end">
+                <div
+                  class="flex flex-col gap-y-3 w-full md:max-w-[325px] mt-1 place-items-end"
+                >
+                  <button
+                    onclick="addChildDevelopment()"
+                    class="flex flex-col w-full justify-center items-center text-center gap-x-2 bg-[#FFC10E] p-2.5 rounded-lg outline:none"
+                  >
+                    <span
+                      class="text-[#B05F00] font-semibold text-[17px] lg:text-[15px]"
+                      >Tambah Capaian Perkembangan</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <!-- end::Button Tambah Pertumbuhan -->
+
+              <!-- begin::Data Pertumbuhan Anak -->
+              <div
+                class="w-full border border-[#D1D9E2] bg-white overflow-y-scroll scrollbar__hidden max-h-96"
+              >
+                <table
+                  class="w-full min-w-[840px] table-fixed border-collapse select-none"
+                >
+                  <thead class="bg-green-600">
+                    <tr class="border border-[#D1D9E2]">
+                      <th
+                        class="text-white text-center py-2 border border-[#D1D9E2]"
+                      >
+                        Judul
+                      </th>
+                      <th
+                        class="text-white text-center py-2 border border-[#D1D9E2]"
+                      >
+                        Tanggal
+                      </th>
+                      <th
+                        class="text-white text-center py-2 border border-[#D1D9E2] w-1/2"
+                      >
+                        Keterangan
+                      </th>
+                      <th
+                        class="text-white text-center py-2 border border-[#D1D9E2]"
+                      >
+                        Foto
+                      </th>
+                      <th
+                        class="text-white text-center py-2 border border-[#D1D9E2]"
+                      >
+                        Tindakan
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="baby_data_list">
+                    <tr class="border-b border-[#D1D9E2] text-gray-600">
+                      <td
+                        class="text-center py-2 font-medium text-[15px] border border-[#D1D9E2]"
+                      >
+                        Belajar Melangkah
+                      </td>
+                      <td
+                        class="text-center py-2 font-medium text-[15px] border border-[#D1D9E2]"
+                      >
+                        15-Agustus-2024
+                      </td>
+                      <td
+                        class="text-center py-2 font-medium text-[15px] border border-[#D1D9E2]"
+                      >
+                        Argi mulai melangkah sebanyak 3 langkah untuk pertama
+                        kalinya
+                      </td>
+                      <td class="text-center border border-[#D1D9E2]">
+                        <button
+                          class="btn-sm btn-active-light-primary btn-hover bg-[#FFC10E] text-[#B05F00]"
+                        >
+                          Preview
+                        </button>
+                      </td>
+                      <td class="text-center border border-[#D1D9E2]">
+                        <!-- EDIT BUTTON -->
+                        <button
+                          onclick="editChildDevelopment()"
+                          class="btn-sm btn-active-light-primary btn-hover bg-green-500 text-white"
+                        >
+                          <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/metronic/docs/core/html/src/media/icons/duotune/general/gen055.svg-->
+                          <span class="svg-icon svg-icon-muted svg-icon-2hx"
+                            ><svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.3"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M2 4.63158C2 3.1782 3.1782 2 4.63158 2H13.47C14.0155 2 14.278 2.66919 13.8778 3.04006L12.4556 4.35821C11.9009 4.87228 11.1726 5.15789 10.4163 5.15789H7.1579C6.05333 5.15789 5.15789 6.05333 5.15789 7.1579V16.8421C5.15789 17.9467 6.05333 18.8421 7.1579 18.8421H16.8421C17.9467 18.8421 18.8421 17.9467 18.8421 16.8421V13.7518C18.8421 12.927 19.1817 12.1387 19.7809 11.572L20.9878 10.4308C21.3703 10.0691 22 10.3403 22 10.8668V19.3684C22 20.8218 20.8218 22 19.3684 22H4.63158C3.1782 22 2 20.8218 2 19.3684V4.63158Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M10.9256 11.1882C10.5351 10.7977 10.5351 10.1645 10.9256 9.77397L18.0669 2.6327C18.8479 1.85165 20.1143 1.85165 20.8953 2.6327L21.3665 3.10391C22.1476 3.88496 22.1476 5.15129 21.3665 5.93234L14.2252 13.0736C13.8347 13.4641 13.2016 13.4641 12.811 13.0736L10.9256 11.1882Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M8.82343 12.0064L8.08852 14.3348C7.8655 15.0414 8.46151 15.7366 9.19388 15.6242L11.8974 15.2092C12.4642 15.1222 12.6916 14.4278 12.2861 14.0223L9.98595 11.7221C9.61452 11.3507 8.98154 11.5055 8.82343 12.0064Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <!--end::Svg Icon-->
+                        </button>
+
+                        <!-- HAPUS BUTTON -->
+                        <button
+                          class="btn-sm btn-active-light-primary btn-hover bg-red-500 text-white"
+                        >
+                          <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/metronic/docs/core/html/src/media/icons/duotune/general/gen034.svg-->
+                          <span class="svg-icon svg-icon-muted svg-icon-2hx"
+                            ><svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                opacity="0.3"
+                                x="2"
+                                y="2"
+                                width="20"
+                                height="20"
+                                rx="5"
+                                fill="currentColor"
+                              />
+                              <rect
+                                x="7"
+                                y="15.3137"
+                                width="12"
+                                height="2"
+                                rx="1"
+                                transform="rotate(-45 7 15.3137)"
+                                fill="currentColor"
+                              />
+                              <rect
+                                x="8.41422"
+                                y="7"
+                                width="12"
+                                height="2"
+                                rx="1"
+                                transform="rotate(45 8.41422 7)"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <!--end::Svg Icon-->
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#D1D9E2] text-gray-600">
+                      <td
+                        class="text-center py-2 font-medium text-[15px] border border-[#D1D9E2]"
+                      >
+                        Belajar Melangkah
+                      </td>
+                      <td
+                        class="text-center py-2 font-medium text-[15px] border border-[#D1D9E2]"
+                      >
+                        15-Agustus-2024
+                      </td>
+                      <td
+                        class="text-center py-2 font-medium text-[15px] border border-[#D1D9E2]"
+                      >
+                        Argi mulai melangkah sebanyak 3 langkah untuk pertama
+                        kalinya
+                      </td>
+                      <td class="text-center border border-[#D1D9E2]">
+                        <button
+                          class="btn-sm btn-active-light-primary btn-hover bg-[#FFC10E] text-[#B05F00]"
+                        >
+                          Preview
+                        </button>
+                      </td>
+                      <td class="text-center border border-[#D1D9E2]">
+                        <!-- EDIT BUTTON -->
+                        <button
+                          onclick="editChildDevelopment()"
+                          class="btn-sm btn-active-light-primary btn-hover bg-green-500 text-white"
+                        >
+                          <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/metronic/docs/core/html/src/media/icons/duotune/general/gen055.svg-->
+                          <span class="svg-icon svg-icon-muted svg-icon-2hx"
+                            ><svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.3"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M2 4.63158C2 3.1782 3.1782 2 4.63158 2H13.47C14.0155 2 14.278 2.66919 13.8778 3.04006L12.4556 4.35821C11.9009 4.87228 11.1726 5.15789 10.4163 5.15789H7.1579C6.05333 5.15789 5.15789 6.05333 5.15789 7.1579V16.8421C5.15789 17.9467 6.05333 18.8421 7.1579 18.8421H16.8421C17.9467 18.8421 18.8421 17.9467 18.8421 16.8421V13.7518C18.8421 12.927 19.1817 12.1387 19.7809 11.572L20.9878 10.4308C21.3703 10.0691 22 10.3403 22 10.8668V19.3684C22 20.8218 20.8218 22 19.3684 22H4.63158C3.1782 22 2 20.8218 2 19.3684V4.63158Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M10.9256 11.1882C10.5351 10.7977 10.5351 10.1645 10.9256 9.77397L18.0669 2.6327C18.8479 1.85165 20.1143 1.85165 20.8953 2.6327L21.3665 3.10391C22.1476 3.88496 22.1476 5.15129 21.3665 5.93234L14.2252 13.0736C13.8347 13.4641 13.2016 13.4641 12.811 13.0736L10.9256 11.1882Z"
+                                fill="currentColor"
+                              />
+                              <path
+                                d="M8.82343 12.0064L8.08852 14.3348C7.8655 15.0414 8.46151 15.7366 9.19388 15.6242L11.8974 15.2092C12.4642 15.1222 12.6916 14.4278 12.2861 14.0223L9.98595 11.7221C9.61452 11.3507 8.98154 11.5055 8.82343 12.0064Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <!--end::Svg Icon-->
+                        </button>
+
+                        <!-- HAPUS BUTTON -->
+                        <button
+                          class="btn-sm btn-active-light-primary btn-hover bg-red-500 text-white"
+                        >
+                          <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/keenthemes/metronic/docs/core/html/src/media/icons/duotune/general/gen034.svg-->
+                          <span class="svg-icon svg-icon-muted svg-icon-2hx"
+                            ><svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                opacity="0.3"
+                                x="2"
+                                y="2"
+                                width="20"
+                                height="20"
+                                rx="5"
+                                fill="currentColor"
+                              />
+                              <rect
+                                x="7"
+                                y="15.3137"
+                                width="12"
+                                height="2"
+                                rx="1"
+                                transform="rotate(-45 7 15.3137)"
+                                fill="currentColor"
+                              />
+                              <rect
+                                x="8.41422"
+                                y="7"
+                                width="12"
+                                height="2"
+                                rx="1"
+                                transform="rotate(45 8.41422 7)"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <!--end::Svg Icon-->
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div id="fetch_info" class="hidden text-center py-3.5">
+                  <span>Loading...</span>
+                </div>
+              </div>
+
+              <!-- end::Data Pertumbuhan Anak -->
+            </div>
+          </div>
+          <!-- end::Dashboard - Catat Perkembangan -->
+        </div>
+        <!-- end::Left Dashboard -->
+
+        <!-- begin::Right Dashboard -->
+        <div
+          class="p-6 sm:p-8 min-[840px]:p-10 flex flex-col w-full xl:max-w-[325px] bg-white shadow-[0_4px_8px_0px_rgba(0,0,0,0.10)] gap-y-10 xl:gap-y-[14px] min-[1600px]:gap-y-[30px] rounded-2xl xl:rounded-none"
+        >
+          <div class="gap-y-3">
+            <h3 class="text-[18px] font-bold text-[#0F3F25] pb-4">Data Anak</h3>
+
+            <div
+              class="w-full h-[150px] bg-[#0F3F25] rounded-[16px] gap-y-2 shadow-[2px_2px_8px_2px_rgba(0,0,0,0.20)]"
+            >
+              <div
+                class="w-full h-[110px] bg-white items-center text-center rounded-[14px] p-3"
+              >
+                <div
+                  class="flex items-center justify-content-start text-center"
+                >
+                  <div class="items-center">
+                    <img
+                      class="items-center w-[75px] mr-4 ml-1"
+                      src="assets/icons/boy.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="items-center text-center justify-center">
+                    <p class="text-[18px] lg:text-[16px] font-semibold">
+                      Argi Kalandra
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-2 text-end">
+                <p class="text-white mr-3">0 tahun 6 bulan</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-y-3 pt-4">
+              <button
+                onclick="addBabyData()"
+                class="flex flex-col w-full justify-center items-center text-center gap-x-2 bg-[#FFC10E] p-2.5 rounded-lg outline:none"
+              >
+                <span
+                  class="text-[#B05F00] font-semibold text-[16px] lg:text-[14px]"
+                  >Tambah Data Anak</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- end::Left Dashboard -->
+      </div>
+    </div>
+
+    <!-- Open Modal -->
+    <!-- begin::Tambah Data Perkembangan -->
+    <div
+      id="perkembangan_modal_container"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 modal-container"
+    >
+      <div class="flex w-full h-full justify-center items-center modal-content">
+        <form
+          id="perkembangan_modal_form"
+          class="relative flex flex-col w-full max-w-[600px] py-[26px] px-[18px] min-[840px]:px-[26px] bg-white rounded-xl gap-y-6 min-[840px]:gap-y-8 overflow-y-auto max-h-[80vh]"
+        >
+          <div class="text-start min-[840px]:text-center p-2">
+            <h1
+              class="font-bold text-[22px] min-[840px]:text-[24px] text-[#0F3F25]"
+            >
+              Ubah Catatan Perkembangan
+            </h1>
+          </div>
+          <div class="flex flex-col gap-y-5">
+            <div class="flex flex-col form-label">
+              <label for="nama-label" class="ml-1">Judul</label>
+              <input
+                type="text"
+                id="judul"
+                class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                placeholder="masukkan judul"
+                required
+              />
+            </div>
+            <div class="flex flex-col form-label">
+              <label for="nama-label" class="ml-1">Tanggal</label>
+              <input
+                type="date"
+                id="tanggal_lahir"
+                class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                required
+              />
+            </div>
+            <div class="flex flex-col form-label">
+              <label for="nama-label" class="ml-1">Keterangan</label>
+              <textarea
+                id="keterangan"
+                rows="4"
+                class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                placeholder="Masukkan keterangan disini"
+              ></textarea>
+            </div>
+            <div class="flex flex-col">
+              <label
+                for="nama-label"
+                class="ml-1 text-sm font-medium text-gray-700"
+                >Foto Perkembangan Anak <span class="text-red-500">*</span></label
+              >
+              <input type="file" />
+            </div>
+          </div>
+          <button
+            id="edit_alert_simpan"
+            type="submit"
+            class="w-full bg-[#0F3F25] px-2 py-2.5 text-white rounded-lg text-sm min-[840px]:text-base"
+          >
+            Simpan
+          </button>
+
+          <button
+            id="close_perkembangan_modal"
+            type="button"
+            class="bg-[#0F3F25] px-1.5 min-[840px]:px-2 py-1 absolute top-5 right-4 min-[840px]:right-6 cursor-pointer rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 min-[840px]:w-5 fill-white"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- end::Tambah Data Perkembangan -->
+
+    <!-- begin::Tambah Data Perkembangan -->
+    <div
+      id="edit_perkembangan_modal_container"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 modal-container"
+    >
+      <div class="flex w-full h-full justify-center items-center modal-content">
+        <form
+          id="edit_perkembangan_modal_form"
+          class="relative flex flex-col w-full max-w-[600px] py-[26px] px-[18px] min-[840px]:px-[26px] bg-white rounded-xl gap-y-6 min-[840px]:gap-y-8 overflow-y-auto max-h-[80vh]"
+        >
+          <div class="text-start min-[840px]:text-center p-2">
+            <h1
+              class="font-bold text-[22px] min-[840px]:text-[24px] text-[#0F3F25]"
+            >
+              Ubah Catatan Perkembangan
+            </h1>
+          </div>
+          <div class="flex flex-col gap-y-5">
+            <div class="flex flex-col form-label">
+              <label for="nama-label" class="ml-1">Judul</label>
+              <input
+                type="text"
+                id="judul"
+                class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                placeholder="masukkan judul"
+                required
+              />
+            </div>
+            <div class="flex flex-col form-label">
+              <label for="nama-label" class="ml-1">Tanggal</label>
+              <input
+                type="date"
+                id="tanggal_lahir"
+                class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                required
+              />
+            </div>
+            <div class="flex flex-col form-label">
+              <label for="nama-label" class="ml-1">Keterangan</label>
+              <textarea
+                id="keterangan"
+                rows="4"
+                class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                placeholder="Masukkan keterangan disini"
+              ></textarea>
+            </div>
+            <div class="flex flex-col">
+              <label
+                for="nama-label"
+                class="ml-1 text-sm font-medium text-gray-700"
+                >Foto Perkembangan Anak<span class="text-red-500">*</span></label
+              >
+              <input type="file" />
+            </div>
+          </div>
+          <button
+            id="edit_alert_simpan"
+            type="submit"
+            class="w-full bg-[#0F3F25] px-2 py-2.5 text-white rounded-lg text-sm min-[840px]:text-base"
+          >
+            Simpan
+          </button>
+
+          <button
+            id="close_perkembangan_edit_modal"
+            type="button"
+            class="bg-[#0F3F25] px-1.5 min-[840px]:px-2 py-1 absolute top-5 right-4 min-[840px]:right-6 cursor-pointer rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 min-[840px]:w-5 fill-white"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- end::Tambah Data Perkembangan -->
+
+    <!-- begin::Tambah Data Anak -->
+    <div
+      id="add_modal_container"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 modal-container"
+    >
+      <div class="flex w-full h-full justify-center items-center modal-content">
+        <form
+          id="add_modal_form"
+          class="relative flex flex-col w-full max-w-[600px] py-[20px] px-[18px] min-[840px]:px-[26px] bg-white rounded-xl gap-y-6 min-[840px]:gap-y-8 overflow-y-auto max-h-[80vh]"
+        >
+          <div class="text-start min-[840px]:text-center">
+            <h1
+              class="font-bold text-[22px] min-[840px]:text-[24px] text-[#0F3F25]"
+            >
+              Tambah Data Anak
+            </h1>
+            <p class="text-xs min-[840px]:text-sm text-[#898989]">
+              Lengkapi semua data mengenai anak anda
+            </p>
+          </div>
+          <div class="flex flex-col gap-y-5">
+            <input
+              type="text"
+              id="nama"
+              class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+              placeholder="Nama Lengkap"
+              required
+            />
+            <div class="flex flex-col form-label ml-1">
+              <label for="nama-label" class="ml-1">Tanggal Lahir</label>
+              <input
+                type="date"
+                id="tanggal_lahir"
+                class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                required
+              />
+            </div>
+            <div class="form-group m-0 p-0 ml-1">
+              <label for="" class="required form-label">Jenis Kelamin</label>
+              <div class="form-check form-check-custom form-check-solid ml-2">
+                <label class="form-check-label">
+                  <input
+                    class="form-check-input mr-1"
+                    type="radio"
+                    name="jenisKel"
+                    value="Laki-Laki"
+                    required
+                  />
+                  Laki-Laki
+                </label>
+                <label class="form-check-label ml-12">
+                  <input
+                    class="form-check-input mr-1"
+                    type="radio"
+                    name="jenisKel"
+                    value="Perempuan"
+                    required
+                  />
+                  Perempuan
+                </label>
+              </div>
+            </div>
+            <input
+              type="text"
+              id="berat"
+              class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+              pattern="^[0-9]*\.?[0-9]*$"
+              placeholder="Berat Badan (kg) cth: (2.55)"
+              required
+            />
+            <input
+              type="text"
+              id="tinggi"
+              class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+              pattern="^[0-9]*\.?[0-9]*$"
+              placeholder="Tinggi Badan (cm) cth: (6.2)"
+              required
+            />
+          </div>
+          <button
+            id="sweetalert_simpan"
+            type="submit"
+            class="w-full bg-[#0F3F25] px-2 py-2.5 text-white rounded-lg text-sm min-[840px]:text-base"
+          >
+            Simpan
+          </button>
+
+          <button
+            id="close_add_modal"
+            type="button"
+            class="bg-[#0F3F25] px-1.5 min-[840px]:px-2 py-1 absolute top-4 right-4 min-[840px]:right-6 cursor-pointer rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 min-[840px]:w-5 fill-white"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- end::Tambah Data Anak -->
+
+    
+    <!-- Open Tag Footer -->
+    <footer class="w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex flex-col justify-between items-center py-4 lg:py-8 gap-y-8"
+      >
+        <div class="w-full flex flex-col gap-y-5">
+          <div class="order-1">
+            <img
+              src="assets/images/logo.png"
+              alt="Langkah Maju Logo"
+              class="w-40 md:w-44 lg:w-48"
+            />
+          </div>
+          <div class="order-2 flex flex-col ml-1">
+            <span class="text-sm lg:text-base text-white"
+              >Langkah Maju hadir untuk memberikan pendampingan yang optimal
+              dalam setiap fase pertumbuhan anak,
+            </span>
+            <span class="text-sm lg:text-base text-white"
+              >sehingga anak dapat tumbuh dan berkembang secara optimal.</span
+            >
+          </div>
+          <div
+            class="order-4 lg:order-3 flex justify-start lg:justify-end items-center gap-x-6"
+          >
+            <a href="#">
+              <img
+                src="assets/icons/facebook.png"
+                alt="Facebook"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/instagram.png"
+                alt="Instagram"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/youtube.png"
+                alt="Youtube"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full pt-4 border-t border-[#D1D9E2]">
+          <span class="text-[12px] lg:text-sm text-white"
+            >© Copyright 2023
+          </span>
+        </div>
+      </div>
+    </footer>
+    <!-- Close Tag Footer -->
+
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/data-anak.js"></script>
+    <script src="assets/js/data-perkembangan.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

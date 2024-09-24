@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perkembangan</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/icon-LM.png" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Open+Sans:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#F9FBFD] overflow-x-hidden">
+    <!-- Open Tag Header -->
+    <header class="fixed-navbar w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-8 lg:px-12 flex justify-between items-center py-3"
+      >
+        <div class="shrink-0">
+          <img
+            src="assets/images/logo.png"
+            alt="Baby Care Logo"
+            class="w-40 md:w-44 lg:w-48"
+          />
+        </div>
+
+        <!-- Desktop Navbar -->
+        <nav
+          class="hidden min-[850px]:block navbar navbar-expand-lg navbar-light"
+        >
+          <ul class="flex items-center gap-x-12">
+            <li>
+              <a href="dashboard.html" class="text-white custom-hover"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <div class="nav-item dropdown">
+                <a
+                  href="javascript:void(0);"
+                  class="nav-link dropdown-toggle text-white custom-hover"
+                  data-toggle="dropdown"
+                  >Fitur</a
+                >
+                <div class="dropdown-menu">
+                  <a href="perkembangan.html" class="dropdown-item"
+                    >Skrining Perkembangan</a
+                  >
+                  <a href="gizi-pertumbuhan.html" class="dropdown-item"
+                    >Grafik Pertumbuhan</a
+                  >
+                  <a href="imunisasi.html" class="dropdown-item">Imunisasi</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="catatan-perkembangan.html"
+                class="text-white custom-hover"
+                >Catatan Perkembangan</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Profil -->
+        <div class="hidden min-[850px]:block">
+          <div class="flex items-center gap-x-3">
+            <a href="profil.html">
+              <h1
+                id="user_full_name"
+                class="font-semibold text-white text-[16px]"
+              >
+                Jaezlyn
+              </h1>
+            </a>
+            <a href="profil.html">
+              <div class="ml-2">
+                <img
+                  src="assets/images/mommy.webp"
+                  alt="User's Profile Picture"
+                  class="w-[45px] h-[45px] rounded-full object-cover"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div class="block min-[850px]:hidden" id="open_modal_btn">
+          <svg
+            class="fill-white text-[26px] cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 448 512"
+          >
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </div>
+
+        <!-- Mobile Modal -->
+        <div
+          class="mobile_modal translate-y-[100%] fixed top-0 left-0 w-full h-screen bg-[#0F3F25] px-4 duration-500 ease-in-out z-[999] overflow-y-auto"
+        >
+          <div class="w-full">
+            <ul class="flex flex-col px-4 pt-[80px] gap-y-6">
+              <li>
+                <div class="flex flex-col gap-x-3">
+                  <a href="profil.html">
+                    <div class="ml-2">
+                      <img
+                        src="assets/images/mommy.webp"
+                        alt="User's Profile Picture"
+                        class="w-[80px] h-[80px] rounded-full object-cover"
+                      />
+                    </div>
+                  </a>
+
+                  <a href="profil.html">
+                    <h1
+                      id="user_full_name"
+                      class="font-semibold text-white text-[16px] pt-2 pb-1 px-2"
+                    >
+                      Jaezlyn
+                    </h1>
+                  </a>
+                </div>
+              </li>
+
+              <span class="w-[150px] border-t-2 border-[#FFCB40]"></span>
+
+              <li>
+                <a
+                  href="dashboard.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/home.png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Beranda</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/toy-block (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Skrining Perkembangan</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="gizi-pertumbuhan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/growth (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Grafik Pertumbuhan</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="imunisasi.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/vaccines (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3">Imunisasi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="catatan-perkembangan.html"
+                  class="flex items-center text-white custom-hover"
+                >
+                  <img
+                    class="w-[30px] lg:w-[30px]"
+                    src="assets/icons/playtime (1).png"
+                    alt=""
+                  />
+                  <span class="text-lg font-medium pl-3"
+                    >Catatan Perkembangan</span
+                  >
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <!-- Close Modal -->
+          <div class="absolute top-6 right-6" id="close_modal_btn">
+            <svg
+              class="fill-white text-[26px] cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 384 512"
+            >
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Close Tag Header -->
+
+    <!-- Open Tag Content -->
+    <div class="pt-[78px] pb-8 min-[840px]:pt-[80px] xl:pb-0">
+      <div
+        class="flex flex-col xl:flex-row justify-between w-full h-auto xl:h-screen px-[20px] py-[20px] md:py-0 sm:px-[35px] min-[840px]:pl-[55px] min-[840px]:pr-[55px] xl:pr-0 gap-x-[55px] select-none"
+      >
+        <!-- begin::Left Dashboard -->
+        <div
+          class="flex flex-col w-full lg:mb-12 xl:gap-y-[20px] min-[1600px]:gap-y-[30px]"
+        >
+          <!-- begin::Skrining Perkembangan -->
+          <div class="flex flex-col w-full h-auto pb-2 xl:h-screen gap-y-4">
+            <div class="w-full flex flex-col text-start mb-2 md:mt-8">
+              <h1
+                class="font-opensans text-[18px] min-[840px]:text-[20px] text-[#005E0F] font-extrabold mb-1"
+              >
+                Skrining Perkembangan Anak
+              </h1>
+              <p class="text-[#898989] text-[14px] min-[840px]:text-[15px]">
+                Anak terus berkembang setiap harinya, pantau setiap perkembangan anak
+              </p>
+            </div>
+
+            <div class="flex flex-col w-full h-full gap-y-5 outline-1">
+              <div
+                class="flex self-stretch flex-col w-full h-[850px] pb-20 gap-y-5 overflow-y-scroll"
+              >
+                <!-- Card 3 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center mt-2 px-5 py-3 min-[840px]:p-4 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 3 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk bayi usia 3 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/3-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 6 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 6 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk bayi usia 6 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/6-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 9 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 9 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk bayi usia 9 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/9-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 12 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 12 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 12 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/12-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 15 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 15 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 15 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/15-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 18 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 18 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 8 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/18-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 21 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 21 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 21 bulan ke atas
+                      </p> 
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/21-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 24 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 24 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 24 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/24-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 30 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 30 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 30 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/30-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 36 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 36 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 36 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/36-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 42 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 42 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 42 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/42-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 48 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 48 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 48 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/48-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Card 54 bulan -->
+                <div
+                  class="flex rounded-xl h-auto justify-center items-center px-5 py-3 min-[840px]:p-6 bg-white border-[1px] border-solid border-[#D1D9E2]"
+                >
+                  <div
+                    class="flex items-center w-full gap-x-4 min-[840px]:gap-x-8"
+                  >
+                    <div class="">
+                      <h1
+                        class="font-poppins text-[14px] min-[840px]:text-[16px] text-[#005E0F] font-bold"
+                      >
+                        Usia 54 bulan
+                      </h1>
+                      <p class="text-[#898989] text-xs min-[840px]:text-sm">
+                        Skrining untuk anak usia 54 bulan ke atas
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="./Perkembangan/54-bulan.html"
+                    class="w-[32px] min-[840px]:w-[36px] h-[32px] min-[840px]:h-[36px] flex items-center py-[5px] justify-center rounded-[10px] font-medium text-lg fill-[#7C8B9D] bg-[#E6E9EC]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-[0.85em] min-[840px]:h-[1em]"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- end::Skrining Perkembangan -->
+        </div>
+        <!-- end::Left Dashboard -->
+
+        <!-- begin::Right Dashboard - Profil Anak -->
+        <div
+          class="p-6 sm:p-8 min-[840px]:p-10 flex flex-col w-full xl:max-w-[325px] bg-white shadow-[0_4px_8px_0px_rgba(0,0,0,0.10)] gap-y-10 xl:gap-y-[14px] min-[1600px]:gap-y-[30px] rounded-2xl xl:rounded-none"
+        >
+          <div class="gap-y-3">
+            <h3 class="text-[18px] font-bold text-[#005E0F] pb-4">Data Anak</h3>
+
+            <div
+              class="w-full h-[150px] bg-[#0F3F25] rounded-[16px] gap-y-2 shadow-[2px_2px_8px_2px_rgba(0,0,0,0.20)]"
+            >
+              <div
+                class="w-full h-[110px] bg-white items-center text-center rounded-[14px] p-3"
+              >
+                <div
+                  class="flex items-center justify-content-start text-center"
+                >
+                  <div class="items-center">
+                    <img
+                      class="items-center w-[75px] mr-4 ml-1"
+                      src="assets/icons/boy.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="items-center text-center justify-center">
+                    <p class="text-[18px] lg:text-[16px] font-semibold">
+                      Argi Kalandra
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-2 text-end">
+                <p class="text-white mr-3">0 tahun 6 bulan</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-y-3 pt-4">
+              <button
+                onclick="addBabyData()"
+                class="flex flex-col w-full justify-center items-center text-center gap-x-2 bg-[#FFC10E] p-2.5 rounded-lg outline:none"
+              >
+                <span
+                  class="text-[#B05F00] font-semibold text-[16px] lg:text-[14px]"
+                  >Tambah Data Anak</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- end::Left Dashboard - Profil Anak -->
+      </div>
+    </div>
+
+    <!-- Open Modal -->
+    <!-- begin::Tambah Data Anak-->
+    <div
+          id="add_modal_container"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 modal-container"
+        >
+          <div class="flex w-full h-full justify-center items-center modal-content">
+            <form
+              id="add_modal_form"
+              class="relative flex flex-col w-full max-w-[600px] py-[20px] px-[18px] min-[840px]:px-[26px] bg-white rounded-xl gap-y-6 min-[840px]:gap-y-8 overflow-y-auto max-h-[80vh]"
+            >
+              <div class="text-start min-[840px]:text-center">
+                <h1
+                  class="font-bold text-[22px] min-[840px]:text-[24px] text-[#0F3F25]"
+                >
+                  Tambah Data Anak
+                </h1>
+                <p class="text-xs min-[840px]:text-sm text-[#898989]">
+                  Lengkapi semua data mengenai anak anda
+                </p>
+              </div>
+              <div class="flex flex-col gap-y-5">
+                <input
+                  type="text"
+                  id="nama"
+                  class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                  placeholder="Nama Lengkap"
+                  required
+                />
+                <div class="flex flex-col form-label ml-1">
+                  <label for="nama-label" class="ml-1">Tanggal Lahir</label>
+                  <input
+                    type="date"
+                    id="tanggal_lahir"
+                    class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                    required
+                  />
+                </div>
+                <div class="form-group m-0 p-0 ml-1">
+                  <label for="" class="required form-label">Jenis Kelamin</label>
+                  <div class="form-check form-check-custom form-check-solid ml-2">
+                    <label class="form-check-label">
+                      <input
+                        class="form-check-input mr-1"
+                        type="radio"
+                        name="jenisKel"
+                        value="Laki-Laki"
+                        required
+                      />
+                      Laki-Laki
+                    </label>
+                    <label class="form-check-label ml-12">
+                      <input
+                        class="form-check-input mr-1"
+                        type="radio"
+                        name="jenisKel"
+                        value="Perempuan"
+                        required
+                      />
+                      Perempuan
+                    </label>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  id="berat"
+                  class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                  pattern="^[0-9]*\.?[0-9]*$"
+                  placeholder="Berat Badan (kg) cth: (2.55)"
+                  required
+                />
+                <input
+                  type="text"
+                  id="tinggi"
+                  class="text-sm min-[840px]:text-base px-3 py-2 focus:outline-none border border-[#D1D9E2] text-[#474F7C] placeholder:text-[#898989] rounded-lg"
+                  pattern="^[0-9]*\.?[0-9]*$"
+                  placeholder="Tinggi Badan (cm) cth: (6.2)"
+                  required
+                />
+              </div>
+              <button
+                id="sweetalert_simpan"
+                type="submit"
+                class="w-full bg-[#0F3F25] px-2 py-2.5 text-white rounded-lg text-sm min-[840px]:text-base"
+              >
+                Simpan
+              </button>
+    
+              <button
+                id="close_add_modal"
+                type="button"
+                class="bg-[#0F3F25] px-1.5 min-[840px]:px-2 py-1 absolute top-4 right-4 min-[840px]:right-6 cursor-pointer rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 min-[840px]:w-5 fill-white"
+                  viewBox="0 0 384 512"
+                >
+                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+    <!-- end::Tambah Data Anak -->
+
+    <!-- Open Tag Footer -->
+    <footer class="w-full bg-[#0F3F25]">
+      <div
+        class="w-full max-w-[1280px] mx-auto px-4 md:px-8 lg:px-12 flex flex-col justify-between items-center py-4 lg:py-8 gap-y-8"
+      >
+        <div class="w-full flex flex-col gap-y-5">
+          <div class="order-1">
+            <img
+              src="assets/images/logo.png"
+              alt="Langkah Maju Logo"
+              class="w-40 md:w-44 lg:w-48"
+            />
+          </div>
+          <div class="order-2 flex flex-col ml-1">
+            <span class="text-sm lg:text-base text-white"
+              >Langkah Maju hadir untuk memberikan pendampingan yang optimal
+              dalam setiap fase pertumbuhan anak,
+            </span>
+            <span class="text-sm lg:text-base text-white"
+              >sehingga anak dapat tumbuh dan berkembang secara optimal.</span
+            >
+          </div>
+          <div
+            class="order-4 lg:order-3 flex justify-start lg:justify-end items-center gap-x-6"
+          >
+            <a href="#">
+              <img
+                src="assets/icons/facebook.png"
+                alt="Facebook"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/instagram.png"
+                alt="Instagram"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="assets/icons/youtube.png"
+                alt="Youtube"
+                class="w-[28px] lg:w-[35px]"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full pt-4 border-t border-[#D1D9E2]">
+          <span class="text-[12px] lg:text-sm text-white"
+            >© Copyright 2023
+          </span>
+        </div>
+      </div>
+    </footer>
+    <!-- Close Tag Footer -->
+
+    <script src="assets/js/data-anak.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/data-imunitation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
