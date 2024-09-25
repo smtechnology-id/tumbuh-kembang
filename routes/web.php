@@ -32,4 +32,11 @@ Route::middleware('AuthCheck:admin')->group(function () {
 // User
 Route::middleware('AuthCheck:user')->group(function () {
     Route::get('/user', [UserController::class, 'user'])->name('user');
+    Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
+
+    // Data Anak
+    Route::get('/data-anak', [UserController::class, 'dataAnak'])->name('user.data-anak');
+    Route::post('/add-data-anak', [UserController::class, 'addDataAnak'])->name('user.add.data-anak');
+    // Kata Sandi
+    Route::get('/kata-sandi', [UserController::class, 'kataSandi'])->name('user.kata-sandi');
 });

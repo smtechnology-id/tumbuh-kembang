@@ -31,7 +31,7 @@ class AuthController extends Controller
             if (Auth::user()->level == 'admin') {
                 return redirect('/admin');
             } else if (Auth::user()->level == 'user') {
-                return redirect('/user');
+                return redirect()->route('index');
             }
             return redirect('/');
         }
@@ -67,7 +67,7 @@ class AuthController extends Controller
         if (Auth::user()->level == 'admin') {
             return redirect('/admin');
         } else if (Auth::user()->level == 'user') {
-            return redirect('/');
+            return redirect()->route('index');
         }
 
         return redirect('/');

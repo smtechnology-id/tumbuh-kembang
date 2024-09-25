@@ -40,7 +40,7 @@
         </div>
 
         <div class="w-full flex flex-col gap-y-[20px]">
-          <input id="username_field" type="text" class="w-full px-[10px] py-[14px] focus:outline-none border-b border-[#005E0F] placeholder:text-[#BDCAE6]" name="email" placeholder="Username or email" pattern="[a-z]+" required>
+          <input id="email_field" type="email" class="w-full px-[10px] py-[14px] focus:outline-none border-b border-[#005E0F] placeholder:text-[#BDCAE6]" name="email" placeholder="Username or email" required>
           <input id="password_field" type="password" class="w-full px-[10px] py-[14px] focus:outline-none border-b border-[#005E0F] placeholder:text-[#BDCAE6]" name="password" placeholder="Password" required>
         </div>
 

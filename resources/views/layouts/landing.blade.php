@@ -56,20 +56,31 @@
             </nav>
 
             <!-- Button Login -->
-            <div class="hidden lg:block">
-                @if (Auth::check())
-                    <a href="{{ route('profile') }}">
-                        <h1 id="user_full_name" class="font-semibold text-white text-[16px] pt-2 pb-1 px-2">
-                            {{ Auth::user()->name }}
-                        </h1>
-                    </a>
-                @else
+            @if (Auth::check())
+                <!-- Profil -->
+                <div class="hidden min-[850px]:block">
+                    <div class="flex items-center gap-x-3">
+                        <a href="{{ route('user.profile') }}">
+                            <h1 id="user_full_name" class="font-semibold text-white text-[16px]">
+                                {{ Auth::user()->name }}
+                            </h1>
+                        </a>
+                        <a href="{{ route('user.profile') }}">
+                            <div class="ml-2">
+                                <img src="{{ asset('assets/images/mommy.webp') }}" alt="User's Profile Picture"
+                                    class="w-[45px] h-[45px] rounded-full object-cover" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @else
+                <div class="hidden lg:block">
                     <a href="{{ route('login') }}"
                         class="flex justify-center items-center gap-x-2 bg-[#FFC10E] py-2 px-8 rounded-lg">
                         <span class="text-[#B05F00] font-semibold text-lg">Login</span>
                     </a>
-                @endif
-            </div>
+                </div>
+            @endif
 
             <!-- Mobile Navbar -->
             <div class="block lg:hidden" id="open_modal_btn">
@@ -136,8 +147,8 @@
                 </div>
                 <!-- Close Modal -->
                 <div class="absolute top-6 right-6" id="close_modal_btn">
-                    <svg class="fill-white text-[26px] cursor-pointer" xmlns="http://www.w3.org/2000/svg" height="1em"
-                        viewBox="0 0 384 512">
+                    <svg class="fill-white text-[26px] cursor-pointer" xmlns="http://www.w3.org/2000/svg"
+                        height="1em" viewBox="0 0 384 512">
                         <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <path
                             d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
@@ -187,7 +198,7 @@
         </div>
     </footer>
     <!-- Close Tag Footer -->
-
+    
     <script src="{{ asset('assets/js/modal.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

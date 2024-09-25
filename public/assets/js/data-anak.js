@@ -14,15 +14,38 @@ function addBabyData() {
   document.getElementById('add_modal_form').addEventListener('submit', function(event) {
     event.preventDefault();
     const data = getData();
-    console.log(data); // Here you can handle the data, e.g., send it to your server
-    addModalContainer.style.display = "none"; // Close modal after submission
-    Swal.fire({
-      text: "Data berhasil disimpan!",
-      icon: "success",
-      confirmButtonText: "OK",
-      customClass: {
-        confirmButton: "bg-[#0F3F25] text-white px-4 py-2 rounded-md"
-      }
+    
+    // Kirim data ke controller/route
+    fetch('/add-data-anak', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(result => {
+      console.log(result); // Tanggapan dari server
+      addModalContainer.style.display = "none"; // Close modal after submission
+      Swal.fire({
+        text: "Data berhasil disimpan!",
+        icon: "success",
+        confirmButtonText: "OK",
+        customClass: {
+          confirmButton: "bg-[#0F3F25] text-white px-4 py-2 rounded-md"
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      Swal.fire({
+        text: "Terjadi kesalahan saat menyimpan data!",
+        icon: "error",
+        confirmButtonText: "OK",
+        customClass: {
+          confirmButton: "bg-[#0F3F25] text-white px-4 py-2 rounded-md"
+        }
+      });
     });
   });
 
